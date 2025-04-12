@@ -3,6 +3,7 @@ import numpy as np
 import cv2
 
 color_array=['blue','red','violet','turquoise','green']
+marker_array = ['o', 's', '^', 'D', 'x']  # 円, 四角, 上三角, ダイヤモンド, バツ
 plt.rcParams["font.size"] = 11
 plt.tight_layout()
 
@@ -24,8 +25,8 @@ x=np.linspace(0, EP+1, EP+1)
 
 for i in range(gam_num):
   print(i)
-  plt.plot(x, PSNR[i, :], color=color_array[i], label=f'noiseless(γ={GAM_array[i]})',linestyle='--', marker='o', markevery=10)
-  plt.plot(x, PSNR_noise[i, :], color=color_array[i], label=f'noisy(γ={GAM_array[i]})')
+  plt.plot(x, PSNR[i, :], color=color_array[i], label=f'noiseless(γ={GAM_array[i]})', linestyle='--', marker=marker_array[i], markevery=10)
+  plt.plot(x, PSNR_noise[i, :], color=color_array[i], label=f'noisy(γ={GAM_array[i]})', marker=marker_array[i], markevery=10)
 #plt.title('ADMM_TV')
 plt.grid(which='major')
 plt.grid(which='minor')
@@ -40,8 +41,8 @@ plt.show()
 #SSIMの推移を表示
 x=np.linspace(0, EP+1, EP+1)
 for i in range(gam_num):
-  plt.plot(x, SSIM[i, :], color=color_array[i], label=f'noiseless(γ={GAM_array[i]})',linestyle='--', marker='o', markevery=10)
-  plt.plot(x, SSIM_noise[i, :], color=color_array[i], label=f'noisy(γ={GAM_array[i]})')
+  plt.plot(x, SSIM[i, :], color=color_array[i], label=f'noiseless(γ={GAM_array[i]})',linestyle='--', marker=marker_array[i], markevery=10)
+  plt.plot(x, SSIM_noise[i, :], color=color_array[i], label=f'noisy(γ={GAM_array[i]})', marker=marker_array[i], markevery=10)
 #plt.title('ADMM_TV')
 plt.grid(which='major')
 plt.grid(which='minor')
