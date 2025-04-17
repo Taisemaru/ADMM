@@ -4,7 +4,7 @@ import cv2
 
 color_array=['blue','red','violet','turquoise','green']
 marker_array = ['o', 's', '^', 'D', 'x']  # 円, 四角, 上三角, ダイヤモンド, バツ
-plt.rcParams["font.size"] = 11
+plt.rcParams["font.size"] = 14
 plt.tight_layout()
 
 gam_num=5
@@ -33,7 +33,7 @@ plt.grid(which='minor')
 plt.xlabel('Number of iterations')
 plt.ylabel('PSNR')
 #plt.xticks([10,20,30,40,50],fontsize=9,color='black')
-plt.legend(loc='lower left', fontsize=11, bbox_to_anchor=(1, 0))
+plt.legend(loc='lower left', fontsize=14, bbox_to_anchor=(1, 0))
 #plt.ylim(21.5,35)
 plt.savefig('PSNR_plot.png', dpi=300, bbox_inches='tight')
 plt.show()
@@ -48,7 +48,7 @@ plt.grid(which='major')
 plt.grid(which='minor')
 plt.xlabel('Number of iterations')
 plt.ylabel('SSIM')
-plt.legend(loc='lower left', fontsize=12, bbox_to_anchor=(1, 0))
+plt.legend(loc='lower left', fontsize=14, bbox_to_anchor=(1, 0))
 #plt.ylim(0.35,0.95)
 plt.savefig('SSIM_plot.png', dpi=300, bbox_inches='tight')
 plt.show()
